@@ -770,11 +770,6 @@ footer {
     display: none;
 }
 
-.PopUp {
-   display: flex;
-   justify-content: center;
-}
-
 .b-popup{
   width:100%;
   height:100%;
@@ -785,10 +780,11 @@ footer {
   align-items: center;
   justify-content: center;   
 }
+
 .result {
    overflow: hidden;
    width: 100%;
-   word-wrap:break-wordЫ-;
+   word-wrap:break-word;
 }
 
 .b-popup-content{   
