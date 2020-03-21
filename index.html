@@ -12,13 +12,13 @@
 <body>
   <div class="wrapper">
     <div class="content">
-      <header>
-        <div class="nav-wrapper">
-          <div class="container">
+      <header id="header">
+        <div class="container">
+          <div class="header-wrapper" id="home">
+            <h1 class="nav__logo">SINGOLO<sup class="nav__logo_star">&#9913;</sup></h1>
             <nav class="nav">
-              <h1 class="nav__logo">SINGOLO<sup class="nav__logo_star">&#9913;</sup></h1>
               <ul id="list" class="nav__list">
-                <li class="nav__item"><a href="#" class="nav__link nav__link_active ">Home</a></li>
+                <li class="nav__item"><a href="#home" class="nav__link nav__link_active ">Home</a></li>
                 <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
                 <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
                 <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
@@ -28,36 +28,43 @@
           </div>
         </div>
       </header>
-      <main>
-        <div class="slider-wrapper">
-          <div class="slider container">
+
+      <main id="main">
+        <section class="center" id="slider-wrapper" data-id="home">
+          <div class=" container">
             <div class="slider-block">
-              <div class="prv-arrow" onclick="minusSlide()">
+
+              <div class="prv-arrow" id="arrow_left">
                 <svg class="arrow">
                   <use xlink:href="assets/icons/prv-arrow.svg#prv-arrow"></use>
                 </svg>
               </div>
-              <div class="item-img">
-                <div class="item">
-                  <img src="assets/img/Phone-horizontal.png" alt="Phone" class="slider-block__phone-horizontal">
-                  <img src="assets/img/Phone-vertical.png" alt="Phone" class="slider-block__phone-vertical">
+
+              <div class="slider" id="slider">
+                <div class="slide_single slide_1" style="left: -830px;">
+                  
+                  <div class="iPhone_Vert"></div>                     
+                  <div class="iPhone_Hor"></div>                 
+
+                  <img src="assets/img/Phone-vertical.png" alt="Phone" class="iPhone-Vert" width="243" height="487">
+                  <img src="assets/img/Phone-horizontal.png" alt="Phone" class="iPhone-Hor" width="486" height="242">
+                </div>
+
+                <div class="slide_single slide_2">
+                  <img src="assets/img/2-iphones.png" alt="Phone" class="images">
                 </div>
               </div>
-              <div class="item-img">
-                <img src="assets/img/Slider.png" alt="Phone" class="images">
-              </div>
 
-              <div class="nxt-arrow" onclick="plusSlide()">
+              <div class="nxt-arrow" id="arrow_right">
                 <svg class="arrow">
                   <use xlink:href="assets/icons/nxt-arrow.svg#nxt-arrow"></use>
                 </svg>
               </div>
             </div>
           </div>
-
-        </div>
-        <section class="services">
-          <div id="services" class="services-block ">
+        </section>
+        <section class="services" id="services" data-id="services">
+          <div  class="services-block ">
             <div class="container">
               <h2 class="services-block__heading">Our Services</h2>
               <p class="services-block__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
@@ -151,8 +158,8 @@
             </div>
           </div>
         </section>
-        <section class="portfolio">
-          <div id="portfolio" class="container">
+        <section class="portfolio" id="portfolio" data-id="portfolio">
+          <div  class="container">
             <h1 class="portfolio__h1">Portfolio</h1>
             <p class="portfolio__text">Duis mollis, est non commodo luctus,nisi erat porttitor ligula, eget lacinia odio
               sem
@@ -183,8 +190,8 @@
             </div>
           </div>
         </section>
-        <section class="about-us">
-          <div id="about" class="container">
+        <section class="about-us" id="about" data-id="about">
+          <div  class="container">
             <h2 class="about-us__h2">About Us</h2>
             <p class="about-us__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
               non
@@ -315,19 +322,18 @@
             </div>
           </div>
         </section>
-        <section class="quote">
+        <section class="quote" id="quote" data-id="quote">
 
           <div id="PopUp" class="hidden">
-            <div class="b-popup">
+            <div class="PopUp">
               <div class="b-popup-content">
-                
-                <span id="result"> </span> </br>
+                <p class="result" id="result"> </p> </br>
                 <button id="close-button">OK</button>
-              </div>              
+              </div>
             </div>
           </div>
 
-          <div id="quote" class="container">
+          <div  class="container">
             <h2 class="quote__h2">Get a Quote</h2>
             <p class="quote__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non
               commodo luctus,
@@ -339,11 +345,11 @@
               <div class="quote-form">
                 <form id="myForm" method="POST" action="form.php">
                   <div class="quote-form-flex">
-                    <input type="text" name="name" placeholder="Name (Required)" size="30" >
-                    <input type="email" name="Email" placeholder="Email (Required)" size="30" >
+                    <input type="text" name="name" placeholder="Name (Required)" size="30" required>
+                    <input type="email" name="Email" placeholder="Email (Required)" size="30" required>
                     <input type="text" name="Subject" id="subject" placeholder="Subject" >
-                    <textarea name="text" rows="10" cols="30" id="describe" placeholder="Describe your project in detail..."
-                      ></textarea>
+                    <textarea name="text" rows="10" cols="30" id="describe"
+                      placeholder="Describe your project in detail..."></textarea>
                   </div>
                   <button id="btn" class="quote-form-button">Send</button>
                 </form>
